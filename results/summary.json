@@ -1,0 +1,174 @@
+{
+  "mode": "prophet",
+  "dataset": {
+    "weeks": 104,
+    "skus": 60,
+    "customers_generated": 15000,
+    "customers_with_orders": 13996,
+    "orders": 162218,
+    "order_lines": 218933,
+    "units": 361756,
+    "revenue_eur": 6506049.0,
+    "period": "2024-11-04 to 2026-10-26"
+  },
+  "forecast": {
+    "moving_average": {
+      "MAE": 25.88,
+      "WAPE_%": 39.1
+    },
+    "seasonal_naive": {
+      "MAE": 27.33,
+      "WAPE_%": 41.2
+    },
+    "prophet": {
+      "MAE": 21.76,
+      "WAPE_%": 32.9
+    }
+  },
+  "wape_improvement_vs_best_baseline_%": 15.9,
+  "simulation": [
+    {
+      "method": "moving_average",
+      "sku_weeks": 1560,
+      "stockouts": 68,
+      "demand": 103348,
+      "served": 100400.09,
+      "stock_value": 1508.73,
+      "excess_value": 76.46,
+      "lost_sales": 45827.37,
+      "stockout_rate_%": 4.36,
+      "fill_rate_%": 97.15,
+      "avg_stock_value_total": 90523.83,
+      "avg_excess_value_total": 4587.81
+    },
+    {
+      "method": "prophet",
+      "sku_weeks": 1560,
+      "stockouts": 44,
+      "demand": 103348,
+      "served": 102066.68,
+      "stock_value": 1439.65,
+      "excess_value": 58.2,
+      "lost_sales": 21098.17,
+      "stockout_rate_%": 2.82,
+      "fill_rate_%": 98.76,
+      "avg_stock_value_total": 86378.96,
+      "avg_excess_value_total": 3491.87
+    }
+  ],
+  "stockout_reduction_%": 35.3,
+  "excess_stock_reduction_%": 23.9,
+  "annual_holding_cost_saving_eur": 829.0,
+  "lost_sales_avoided_26w_eur": 24729.0,
+  "scenario_lead_time_plus_1_week": [
+    {
+      "method": "moving_average",
+      "sku_weeks": 1560,
+      "stockouts": 74,
+      "demand": 103348,
+      "served": 99502.39,
+      "stock_value": 1661.19,
+      "excess_value": 99.9,
+      "lost_sales": 60828.42,
+      "stockout_rate_%": 4.74,
+      "fill_rate_%": 96.28,
+      "avg_stock_value_total": 99671.5,
+      "avg_excess_value_total": 5994.02
+    },
+    {
+      "method": "prophet",
+      "sku_weeks": 1560,
+      "stockouts": 60,
+      "demand": 103348,
+      "served": 101144.78,
+      "stock_value": 1573.55,
+      "excess_value": 62.44,
+      "lost_sales": 36916.18,
+      "stockout_rate_%": 3.85,
+      "fill_rate_%": 97.87,
+      "avg_stock_value_total": 94413.24,
+      "avg_excess_value_total": 3746.25
+    }
+  ],
+  "segmentation": {
+    "k": 4,
+    "tests": [
+      {
+        "k": 2,
+        "inertia": 16046.4,
+        "silhouette": 0.469
+      },
+      {
+        "k": 3,
+        "inertia": 11446.7,
+        "silhouette": 0.379
+      },
+      {
+        "k": 4,
+        "inertia": 8778.2,
+        "silhouette": 0.394
+      },
+      {
+        "k": 5,
+        "inertia": 7071.1,
+        "silhouette": 0.359
+      },
+      {
+        "k": 6,
+        "inertia": 5930.7,
+        "silhouette": 0.371
+      },
+      {
+        "k": 7,
+        "inertia": 5146.7,
+        "silhouette": 0.344
+      }
+    ],
+    "profile": [
+      {
+        "cluster": 0,
+        "customers": 3493,
+        "R_mean": 75.6,
+        "F_mean": 5.1,
+        "M_mean": 166.8,
+        "M_total": 582723.4,
+        "customers_%": 28.3,
+        "revenue_%": 17.3,
+        "segment": "Mid-value recurring"
+      },
+      {
+        "cluster": 1,
+        "customers": 2889,
+        "R_mean": 176.6,
+        "F_mean": 1.7,
+        "M_mean": 49.4,
+        "M_total": 142770.5,
+        "customers_%": 23.4,
+        "revenue_%": 4.2,
+        "segment": "At risk of churn"
+      },
+      {
+        "cluster": 2,
+        "customers": 1853,
+        "R_mean": 11.3,
+        "F_mean": 3.6,
+        "M_mean": 110.8,
+        "M_total": 205379.1,
+        "customers_%": 15.0,
+        "revenue_%": 6.1,
+        "segment": "New or infrequent"
+      },
+      {
+        "cluster": 3,
+        "customers": 4086,
+        "R_mean": 20.3,
+        "F_mean": 16.1,
+        "M_mean": 596.0,
+        "M_total": 2435401.7,
+        "customers_%": 33.2,
+        "revenue_%": 72.3,
+        "segment": "High-value loyal"
+      }
+    ]
+  }
+}

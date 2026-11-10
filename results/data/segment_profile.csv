@@ -1,0 +1,5 @@
+cluster,customers,R_mean,F_mean,M_mean,M_total,customers_%,revenue_%,segment
+0,3493,75.6,5.1,166.8,582723.4,28.3,17.3,Mid-value recurring
+1,2889,176.6,1.7,49.4,142770.5,23.4,4.2,At risk of churn
+2,1853,11.3,3.6,110.8,205379.1,15.0,6.1,New or infrequent
+3,4086,20.3,16.1,596.0,2435401.7,33.2,72.3,High-value loyal
